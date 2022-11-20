@@ -115,7 +115,7 @@ task_t cyclic_tasks[TASK_N] = {
 
 char c;
 char command[100];
-int  led_states[3];
+led_state  led_states[3];
 int  led_blink[3];
 /* ------------ FLOATING POINT TEST TASK -------------- */
 /*
@@ -211,7 +211,7 @@ static void AppTaskStart(void *p_arg) {
 
 /*
  *********************************************************************************************************
- *                                          AppTask_USARTEcho
+ *                                          AppTask_USART
  *********************************************************************************************************
  */
 static void AppTask_USART(void *p_arg) {
