@@ -1,0 +1,572 @@
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getLink() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setLink(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getLink() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setLink(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getPubDate() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setPubDate(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getPubDate() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setPubDate(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getTitle() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setTitle(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getTitle() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setTitle(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.util.XmlFactory createParserFactory
+미세: SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@8443f0
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startDocument
+보다 미세: SAXConnector.startDocument
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :html:html, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :head:head, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :script:script
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@884e10
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@24fea8
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :script:script, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@e04722
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세: Trying to locate org/eclipse/mylyn/internal/commons/notifications/feed/jaxb.properties
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세:   not found
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세: Checking system property javax.xml.bind.context.factory
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세:   not found
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세: Checking system property javax.xml.bind.JAXBContext
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세:   not found
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder lookupJaxbContextUsingOsgiServiceLoader
+미세: Unable to find from OSGi: javax.xml.bind.JAXBContext
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세: Checking META-INF/services
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세: Unable to find: META-INF/services/javax.xml.bind.JAXBContext
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder find
+미세: Trying to create the platform default provider
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder safeLoadClass
+미세: Trying to load com.sun.xml.internal.bind.v2.ContextFactory
+10월 19, 2021 12:08:35 오전 javax.xml.bind.ContextFinder newInstance
+미세: loaded com.sun.xml.internal.bind.v2.ContextFactory from jar:file:/C:/Program%20Files%20(x86)/Atollic/TrueSTUDIO%20for%20STM32%209.3.0/ide/jre/lib/rt.jar!/com/sun/xml/internal/bind/v2/ContextFactory.class
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.ContextFactory createContext
+미세: Property com.sun.xml.internal.bind.XmlAccessorFactoryis not active.  Using JAXB's implementation
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.util.ArrayList org.eclipse.mylyn.internal.commons.notifications.feed.RSS.getItems() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSS.setItems(java.util.ArrayList)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getCreator() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setCreator(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getCreator() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setCreator(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getDescription() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setDescription(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getDescription() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setDescription(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getGuid() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setGuid(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getGuid() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setGuid(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getLink() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setLink(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getLink() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setLink(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getPubDate() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setPubDate(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getPubDate() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setPubDate(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getTitle() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setTitle(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory get
+미세: Using optimized Accessor for public java.lang.String org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.getTitle() and public void org.eclipse.mylyn.internal.commons.notifications.feed.RSSItem.setTitle(java.lang.String)
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.util.XmlFactory createParserFactory
+미세: SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@c3a7e6
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startDocument
+보다 미세: SAXConnector.startDocument
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :html:html, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@12ad3c7
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :head:head, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@12ad3c7
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@12ad3c7
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@12ad3c7
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@12ad3c7
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@12ad3c7
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@104c5f
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@104c5f
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@104c5f
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@104c5f
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@104c5f
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector characters
+가장 미세: SAXConnector.characters: [C@12ad3c7
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector startElement
+보다 미세: SAXConnector.startElement: :meta:meta, attrs: com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy@177bdb4
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State push
+가장 미세: State.push
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.SAXConnector endElement
+보다 미세: SAXConnector.startElement: :meta:meta
+10월 19, 2021 12:08:35 오전 com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallingContext$State pop
+가장 미세: State.pop

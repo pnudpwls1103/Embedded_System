@@ -1,0 +1,22 @@
+E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\Debug\BrowseInfo\uC/OS-III\Source\os_mutex.pbi: \
+  E:\Micrium\Software\uCOS-III\Source\os_mutex.c \
+  E:\Micrium\Software\uCOS-III\Source\os.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\os_cfg.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uC-CPU\cpu_core.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uC-CPU\ARM-Cortex-M4\IAR\cpu.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\intrinsics.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iccarm_builtin.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iar_intrinsics_common.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uC-CPU\cpu_def.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\cpu_cfg.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uC-LIB\lib_def.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uC-LIB\lib_mem.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\lib_cfg.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uC-LIB\lib_str.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uC-LIB\lib_ascii.h \
+  E:\Micrium\Software\uCOS-III\Source\os_type.h \
+  E:\Micrium\Examples\ST\STM32F429II-SK\OS3\IAR\..\..\..\..\..\Software\uCOS-III\Ports\ARM-Cortex-M4\Generic\IAR\os_cpu.h
