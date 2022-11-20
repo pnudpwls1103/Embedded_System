@@ -51,7 +51,10 @@
  *********************************************************************************************************
  */
 typedef enum {
-	TASK_USARTECHO, TASK_500MS, TASK_1000MS, TASK_2000MS,
+	TASK_USART,
+	LEDON,
+	LEDOFF,
+	LEDBLINK,
 
 	TASK_N
 } task_e;
@@ -63,6 +66,11 @@ typedef struct {
 	OS_TCB* pTcb;
 } task_t;
 
+typedef enum {
+	OFF,
+	ON,
+	BLINK
+} led_state;
 /*
  *********************************************************************************************************
  *                                         FUNCTION PROTOTYPES
@@ -73,9 +81,9 @@ static void AppTaskCreate(void);
 static void AppObjCreate(void);
 
 static void AppTask_USART(void *p_arg);
-static void AppTask_500ms(void *p_arg);
-static void AppTask_1000ms(void *p_arg);
-static void AppTask_2000ms(void *p_arg);
+static void AppTask_LED1(void *p_arg);
+static void AppTask_LED2(void *p_arg);
+static void AppTask_LED3(void *p_arg);
 
 static void Setup_Gpio(void);
 
@@ -89,21 +97,26 @@ static OS_TCB AppTaskStartTCB;
 static CPU_STK AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE];
 
 static OS_TCB Task_USART_TCB;
-static OS_TCB Task_500ms_TCB;
-static OS_TCB Task_1000ms_TCB;
-static OS_TCB Task_2000ms_TCB;
+static OS_TCB Task_LED1_TCB;
+static OS_TCB Task_LED2_TCB;
+static OS_TCB Task_LED3_TCB;
 
 static CPU_STK Task_USART_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_500ms_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_1000ms_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_2000ms_Stack[APP_CFG_TASK_START_STK_SIZE];
-int count = 0;
-task_t cyclic_tasks[TASK_N] = { { "Task_USART", AppTask_USART, 0,
-		&Task_USART_Stack[0], &Task_USART_TCB }, { "Task_500ms", AppTask_500ms,
-		0, &Task_500ms_Stack[0], &Task_500ms_TCB }, { "Task_1000ms",
-		AppTask_1000ms, 0, &Task_1000ms_Stack[0], &Task_1000ms_TCB }, {
-		"Task_2000ms", AppTask_2000ms, 0, &Task_2000ms_Stack[0],
-		&Task_2000ms_TCB }, };
+static CPU_STK Task_LED1_Stack[APP_CFG_TASK_START_STK_SIZE];
+static CPU_STK Task_LED2_Stack[APP_CFG_TASK_START_STK_SIZE];
+static CPU_STK Task_LED3_Stack[APP_CFG_TASK_START_STK_SIZE];
+
+task_t cyclic_tasks[TASK_N] = {
+		{ "Task_USART", AppTask_USART, 0, &Task_USART_Stack[0], &Task_USART_TCB },
+		{ "Task_LED1", AppTask_LED1, 0, &Task_LED1_Stack[0], &Task_LED1_TCB },
+		{ "Task_LED2", AppTask_LED2, 0, &Task_LED2_Stack[0], &Task_LED2_TCB },
+		{ "Task_LED3", AppTask_LED3, 0, &Task_LED3_Stack[0], &Task_LED3_TCB }
+	};
+
+char c;
+char command[100];
+int  led_states[3];
+int  led_blink[3];
 /* ------------ FLOATING POINT TEST TASK -------------- */
 /*
  *********************************************************************************************************
@@ -136,14 +149,19 @@ int main(void) {
 	/* OS Init */
 	OSInit(&err); /* Init uC/OS-III.                                      */
 
-	OSTaskCreate((OS_TCB *) &AppTaskStartTCB, /* Create the start task                                */
-	(CPU_CHAR *) "App Task Start", (OS_TASK_PTR) AppTaskStart, (void *) 0u,
-			(OS_PRIO) APP_CFG_TASK_START_PRIO, (CPU_STK *) &AppTaskStartStk[0u],
-			(CPU_STK_SIZE) AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE / 10u],
-			(CPU_STK_SIZE) APP_CFG_TASK_START_STK_SIZE, (OS_MSG_QTY) 0u,
-			(OS_TICK) 0u, (void *) 0u,
-			(OS_OPT) (OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR ),
-			(OS_ERR *) &err);
+    OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,              /* Create the start task                                */
+                 (CPU_CHAR     *)"App Task Start",
+                 (OS_TASK_PTR   )AppTaskStart,
+                 (void         *)0u,
+                 (OS_PRIO       )APP_CFG_TASK_START_PRIO,
+                 (CPU_STK      *)&AppTaskStartStk[0u],
+                 (CPU_STK_SIZE  )AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE / 10u],
+                 (CPU_STK_SIZE  )APP_CFG_TASK_START_STK_SIZE,
+                 (OS_MSG_QTY    )0u,
+                 (OS_TICK       )0u,
+                 (void         *)0u,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&err);
 
 	OSStart(&err); /* Start multitasking (i.e. give control to uC/OS-III). */
 
@@ -198,91 +216,159 @@ static void AppTaskStart(void *p_arg) {
  */
 static void AppTask_USART(void *p_arg) {
 	OS_ERR err;
-	uint8_t c;
+	CPU_SR cpu_sr;
+	volatile int index = 0;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		while (USART_GetFlagStatus(Nucleo_COM1, USART_FLAG_RXNE) != RESET) {
+		while (USART_ReceiveData(Nucleo_COM1) != '`') {
+			while (USART_GetFlagStatus(Nucleo_COM1, USART_FLAG_RXNE) == RESET) {
+				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+							  OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+			}
+
 			c = USART_ReceiveData(Nucleo_COM1);
 			USART_SendData(Nucleo_COM1, c);
+			OS_CRITICAL_ENTER();
+			command[index] = c;
+			OS_CRITICAL_EXIT();
+			index++;
+			OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+						  OS_OPT_TIME_HMSM_STRICT,
+						  &err);
 		}
 
-		OSTimeDlyHMSM(0u, 0u, 0u, 100u,
-		OS_OPT_TIME_HMSM_STRICT, &err);
-	}
-}
-/*
- *********************************************************************************************************
- *                                          AppTask_500ms
- *
- * Description : Example of 500mS Task
- *
- * Arguments   : p_arg (unused)
- *
- * Returns     : none
- *
- * Note: Long period used to measure timing in person
- *********************************************************************************************************
- */
-static void AppTask_500ms(void *p_arg) {
-	OS_ERR err;
-	BSP_LED_On(1);
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		BSP_LED_Toggle(1);
-		OSTimeDlyHMSM(0u, 0u, 0u, 500u,
-		OS_OPT_TIME_HMSM_STRICT, &err);
-		count++;
+		command[index - 1] = '\0';
 
-	}
-}
+		if(!(strncmp(command, "led", 3))) {
+			int led_num = atoi(command + 3) - 1;
+			if(!(strncmp((command + 4), "on", 2))) {
+				OS_CRITICAL_ENTER();
+				led_states[led_num] = ON;
+				OS_CRITICAL_EXIT();
+			} else if (!(strncmp((command + 4), "off", 3))) {
+				OS_CRITICAL_ENTER();
+				led_states[led_num] = OFF;
+				OS_CRITICAL_EXIT();
+			} else if (!(strncmp((command + 4), "blink", 5))) {
+				int blink_time = atoi(command + 9);
+				OS_CRITICAL_ENTER();
+				led_states[led_num] = BLINK;
+				led_blink[led_num] = blink_time;
+				OS_CRITICAL_EXIT();
+			}
 
-/*
- *********************************************************************************************************
- *                                          AppTask_1000ms
- *
- * Description : Example of 1000mS Task
- *
- * Arguments   : p_arg (unused)
- *
- * Returns     : none
- *
- * Note: Long period used to measure timing in person
- *********************************************************************************************************
- */
-static void AppTask_1000ms(void *p_arg) {
-	OS_ERR err;
-	BSP_LED_On(2);
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		BSP_LED_Toggle(2);
+		} else if(!(strncmp(command, "reset", 5))) {
+			for(int i = 0; i < 3; i++) {
+				led_states[i] = OFF;
+				led_blink[i] = 0;
+			}
+		}
 
-		OSTimeDlyHMSM(0u, 0u, 1u, 0u,
-		OS_OPT_TIME_HMSM_STRICT, &err);
+		send_string("\n\rCommand : ");
+		send_string(command);
+		send_string("\n\r");
 
+		index = 0;
+
+		OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+					  OS_OPT_TIME_HMSM_STRICT,
+					  &err);
 	}
 }
 
 /*
  *********************************************************************************************************
- *                                          AppTask_2000ms
- *
- * Description : Example of 2000mS Task
- *
- * Arguments   : p_arg (unused)
- *
- * Returns     : none
- *
- * Note: Long period used to measure timing in person
+ *                                          AppTask_LED1
  *********************************************************************************************************
  */
-static void AppTask_2000ms(void *p_arg) {
+static void AppTask_LED1(void *p_arg) {
 	OS_ERR err;
-	BSP_LED_On(3);
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		BSP_LED_Toggle(3);
-
-		OSTimeDlyHMSM(0u, 0u, 2u, 0u,
-		OS_OPT_TIME_HMSM_STRICT, &err);
-
+		switch (led_states[0]) {
+			case ON:
+				BSP_LED_On(1);
+				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+							  OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+			case OFF:
+				BSP_LED_Off(1);
+				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+						      OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+			case BLINK:
+				BSP_LED_Toggle(1);
+				OSTimeDlyHMSM(0u, 0u, led_blink[0], 0u,
+							  OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+		}
 	}
 }
+
+/*
+ *********************************************************************************************************
+ *                                          AppTask_LED2
+ *********************************************************************************************************
+ */
+static void AppTask_LED2(void *p_arg) {
+	OS_ERR err;
+	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
+		switch (led_states[1]) {
+			case ON:
+				BSP_LED_On(2);
+				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+							  OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+			case OFF:
+				BSP_LED_Off(2);
+				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+						      OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+			case BLINK:
+				BSP_LED_Toggle(2);
+				OSTimeDlyHMSM(0u, 0u, led_blink[1], 0u,
+							  OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+		}
+	}
+}
+
+/*
+ *********************************************************************************************************
+ *                                          AppTask_LED3
+ *********************************************************************************************************
+ */
+static void AppTask_LED3(void *p_arg) {
+	OS_ERR err;
+	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
+		switch (led_states[2]) {
+			case ON:
+				BSP_LED_On(3);
+				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+							  OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+			case OFF:
+				BSP_LED_Off(3);
+				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
+						      OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+			case BLINK:
+				BSP_LED_Toggle(3);
+				OSTimeDlyHMSM(0u, 0u, led_blink[2], 0u,
+							  OS_OPT_TIME_HMSM_STRICT,
+							  &err);
+				break;
+		}
+	}
+}
+
 /*
  *********************************************************************************************************
  *                                          AppTaskCreate()
