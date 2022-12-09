@@ -289,9 +289,6 @@ static void AppTask_Button(void *p_arg) {
 						&err);
 		}
 
-		OSTimeDlyHMSM(0u, 0u, 0u, 500u,
-				OS_OPT_TIME_HMSM_STRICT, &err);
-
 		if(blinkState) {
 			OSTaskQPost(&Task_LED_TCB,
 						(void*) 0,
@@ -300,7 +297,8 @@ static void AppTask_Button(void *p_arg) {
 						&err);
 		}
 
-
+		OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+		OS_OPT_TIME_HMSM_STRICT, &err);
 	}
 }
 

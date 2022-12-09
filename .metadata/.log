@@ -610,3 +610,567 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:27:40.476
+!MESSAGE Plug-in 'com.atollic.truestudio.debug.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.run' is invalid): com.atollic.truestudio.debug.ui.action.Restart
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:27:40.588
+!MESSAGE Plug-in 'com.atollic.truestudio.dsf.oss' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.run' is invalid): com.atollic.truestudio.debug.ui.action.TerminateAndRelaunch
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:27:40.593
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:27:40.595
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.rebuildActiveConfiguration: {ActionHandler(com.atollic.truestudio.ui.RebuildActiveConfigMenuAction$CDTReBuildAction@e3d4ab)} vs {ActionHandler(com.atollic.truestudio.ui.RebuildActiveConfigMenuAction$CDTReBuildAction@a065c5)}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:27:40.614
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.manageConfigsAction2
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:27:40.615
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.buildConfigMenuAction
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:27:40.615
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.wsselection
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:28:58.892
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:29:01.376
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:29:01.780
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:29:37.374
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:29:40.443
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:30:44.409
+!MESSAGE Plug-in 'com.atollic.truestudio.debug.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.run' is invalid): com.atollic.truestudio.debug.ui.action.Restart
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:30:44.410
+!MESSAGE Plug-in 'com.atollic.truestudio.dsf.oss' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.run' is invalid): com.atollic.truestudio.debug.ui.action.TerminateAndRelaunch
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:30:44.414
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:30:44.416
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.rebuildActiveConfiguration: {ActionHandler(com.atollic.truestudio.ui.RebuildActiveConfigMenuAction$CDTReBuildAction@e3d4ab)} vs {ActionHandler(com.atollic.truestudio.ui.RebuildActiveConfigMenuAction$CDTReBuildAction@1ba9ca1)}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:30:44.427
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.manageConfigsAction2
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:30:44.428
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.buildConfigMenuAction
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:30:44.428
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.wsselection
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:47.393
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:47.394
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:47.607
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:47.609
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:48.060
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:48.061
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:49.941
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:49.943
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:50.320
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:50.321
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:50.785
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:50.786
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:51.704
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:51.705
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:51.732
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:51.734
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:51.959
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:51.961
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:53.808
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:53.809
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:54.825
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:54.827
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:55.546
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:55.547
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:56.416
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:56.417
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:57.222
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:57.223
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:58.473
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:58.475
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:59.310
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:32:59.311
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:00.051
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:00.051
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:00.775
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:00.776
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:10.103
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:10.104
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:10.140
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:10.141
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:10.262
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:10.263
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:12.454
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:12.456
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:13.274
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:13.275
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:14.185
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:14.186
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.227
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.228
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.242
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.243
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.255
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.256
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.270
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.272
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.284
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.285
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.300
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.301
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.318
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.319
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.492
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:33:50.493
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:34.054
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:34.055
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:35.883
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:35.884
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:44.444
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:44.446
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:44.579
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:44.580
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:49.299
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:49.300
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:52.129
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:52.130
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:58.800
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:37:58.801
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:49.227
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:49.228
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:49.436
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:49.437
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:51.155
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:51.156
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:53.922
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:53.923
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:56.398
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:38:56.399
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:39:44.616
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:39:44.617
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.789
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.790
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.804
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.805
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.822
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.824
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.832
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.833
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.853
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.855
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.863
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.864
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.873
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.874
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.882
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.883
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.890
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.891
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.908
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.909
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.917
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.919
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.926
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.927
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.943
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.944
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.952
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.953
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.961
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.962
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.978
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.979
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.987
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:34.988
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.004
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.005
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.014
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.015
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.030
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.031
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.039
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.040
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.057
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.058
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.074
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.075
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.083
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.085
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.092
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.093
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.109
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.110
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.118
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.119
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.126
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.127
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.145
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.146
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.153
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.154
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.199
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.200
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.488
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:35.489
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:36.548
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:36.549
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:36.561
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:36.562
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:37.410
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:37.411
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:38.321
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:38.322
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:54.840
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:44:54.841
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:59:03.665
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 14:59:03.666
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 15:05:01.769
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY org.eclipse.ui 4 4 2022-12-09 15:05:01.770
+!MESSAGE Conflicting handlers for com.atollic.truestudio.ui.buildSettings: {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])} vs {ActionHandler(WWinPluginAction [id=com.atollic.truestudio.ui.buildSettingsToolbarAction, enabled=true, actionSet=com.atollic.truestudio.ui.build_actionset])}
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2022-12-09 15:24:28.850
+!MESSAGE Unloading product manager

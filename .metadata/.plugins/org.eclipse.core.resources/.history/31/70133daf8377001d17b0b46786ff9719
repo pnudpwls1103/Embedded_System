@@ -63,7 +63,6 @@ typedef struct {
 	OS_PRIO prio;
 	CPU_STK* pStack;
 	OS_TCB* pTcb;
-	OS_MSG_QTY qsize;
 } task_t;
 
 int blinkState = 0;
@@ -101,9 +100,9 @@ static CPU_STK Task_Button_Stack[APP_CFG_TASK_START_STK_SIZE];
 
 
 task_t cyclic_tasks[TASK_N] = {
-		{ "Task_USART", AppTask_USART, 2, &Task_USART_Stack[0], &Task_USART_TCB, 1 },
-		{ "Task_LED", AppTask_LED, 1, &Task_LED_Stack[0], &Task_LED_TCB, 1 },
-		{ "Task_BUTTON", AppTask_Button, 0, &Task_Button_Stack[0], &Task_Button_TCB, 0},
+		{ "Task_USART", AppTask_USART, 2, &Task_USART_Stack[0], &Task_USART_TCB },
+		{ "Task_LED", AppTask_LED, 1, &Task_LED_Stack[0], &Task_LED_TCB },
+		{ "Task_BUTTON", AppTask_Button, 0, &Task_Button_Stack[0], &Task_Button_TCB },
 	};
 
 /* ------------ FLOATING POINT TEST TASK -------------- */
@@ -289,9 +288,6 @@ static void AppTask_Button(void *p_arg) {
 						&err);
 		}
 
-		OSTimeDlyHMSM(0u, 0u, 0u, 500u,
-				OS_OPT_TIME_HMSM_STRICT, &err);
-
 		if(blinkState) {
 			OSTaskQPost(&Task_LED_TCB,
 						(void*) 0,
@@ -300,7 +296,8 @@ static void AppTask_Button(void *p_arg) {
 						&err);
 		}
 
-
+		OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+		OS_OPT_TIME_HMSM_STRICT, &err);
 	}
 }
 
@@ -328,17 +325,10 @@ static void AppTaskCreate(void) {
 	for (idx = 0; idx < TASK_N; idx++) {
 		pTask_Cfg = &cyclic_tasks[idx];
 
-		OSTaskCreate(
-				pTask_Cfg->pTcb,
-				pTask_Cfg->name,
-				pTask_Cfg->func,
-				(void *) 0u,
-				pTask_Cfg->prio,
-				pTask_Cfg->pStack,
+		OSTaskCreate(pTask_Cfg->pTcb, pTask_Cfg->name, pTask_Cfg->func,
+				(void *) 0u, pTask_Cfg->prio, pTask_Cfg->pStack,
 				pTask_Cfg->pStack[APP_CFG_TASK_START_STK_SIZE / 10u],
-				APP_CFG_TASK_START_STK_SIZE,
-				(OS_MSG_QTY) pTask_Cfg->qsize,
-				(OS_TICK) 0u,
+				APP_CFG_TASK_START_STK_SIZE, (OS_MSG_QTY) 0u, (OS_TICK) 0u,
 				(void *) 0u,
 				(OS_OPT) (OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR ),
 				(OS_ERR *) &err);
