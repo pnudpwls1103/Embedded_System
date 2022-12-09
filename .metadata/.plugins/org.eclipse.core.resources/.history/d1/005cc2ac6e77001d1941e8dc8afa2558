@@ -65,7 +65,6 @@ typedef struct {
 	OS_TCB* pTcb;
 } task_t;
 
-int blinkState = 0;
 /*
  *********************************************************************************************************
  *                                         FUNCTION PROTOTYPES
@@ -207,7 +206,6 @@ static void AppTask_USART(void *p_arg) {
 	OS_ERR err;
 	OS_MSG_SIZE msg_size;
 	CPU_TS ts;
-	CPU_SR cpu_sr;
 
 	int buttonNum = 0;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.*/
@@ -233,9 +231,8 @@ static void AppTask_LED(void *p_arg) {
 	OS_ERR err;
 	OS_MSG_SIZE msg_size;
 	CPU_TS ts;
-	CPU_SR cpu_sr;
 
-	uint32_t buttonNum = 0;
+	int buttonNum = 0;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
 		buttonNum += (int)OSTaskQPend(0,
 									OS_OPT_PEND_BLOCKING,
@@ -249,52 +246,34 @@ static void AppTask_LED(void *p_arg) {
 					OS_OPT_POST_FIFO,
 					&err);
 		if(buttonNum == 0) {
-			CPU_CRITICAL_ENTER();
-			blinkState = 0;
-			CPU_CRITICAL_EXIT();
-
 			for(int i = 1; i <= 3; i++)
 				BSP_LED_Off(i);
 		}
 		else if(buttonNum == 1) {
-			CPU_CRITICAL_ENTER();
-			blinkState = 0;
-			CPU_CRITICAL_EXIT();
 			for(int i = 1; i <= 3; i++)
 				BSP_LED_On(i);
 		}
 		else {
-			CPU_CRITICAL_ENTER();
-			blinkState = 1;
-			CPU_CRITICAL_EXIT();
 			for(int i = 1; i <= 3; i++)
 				BSP_LED_Toggle(i);
+			OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+						OS_OPT_TIME_HMSM_STRICT, &err);
 		}
 	}
 }
 
 static void AppTask_Button(void *p_arg) {
 	OS_ERR err;
-	CPU_SR cpu_sr;
 
 	int	button;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
 		button = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
-		if(button) {
-			OSTaskQPost(&Task_LED_TCB,
-						(void*)button,
-						sizeof(button),
-						OS_OPT_POST_FIFO,
-						&err);
-		}
 
-		if(blinkState) {
-			OSTaskQPost(&Task_LED_TCB,
-						(void*) 0,
-						sizeof(0),
-						OS_OPT_POST_FIFO,
-						&err);
-		}
+		OSTaskQPost(&Task_LED_TCB,
+					(void*)button,
+					sizeof(button),
+					OS_OPT_POST_FIFO,
+					&err);
 
 		OSTimeDlyHMSM(0u, 0u, 0u, 500u,
 		OS_OPT_TIME_HMSM_STRICT, &err);
@@ -378,7 +357,6 @@ static void Setup_Gpio(void) {
 	GPIO_InitTypeDef led_init = { 0 };
 
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 	RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 
 	led_init.GPIO_Mode = GPIO_Mode_OUT;

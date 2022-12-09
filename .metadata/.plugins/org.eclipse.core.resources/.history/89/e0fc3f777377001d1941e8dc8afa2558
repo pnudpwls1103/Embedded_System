@@ -235,7 +235,7 @@ static void AppTask_LED(void *p_arg) {
 	CPU_TS ts;
 	CPU_SR cpu_sr;
 
-	uint32_t buttonNum = 0;
+	int buttonNum = 0;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
 		buttonNum += (int)OSTaskQPend(0,
 									OS_OPT_PEND_BLOCKING,
