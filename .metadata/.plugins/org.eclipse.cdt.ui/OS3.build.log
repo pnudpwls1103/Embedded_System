@@ -1,28 +1,21 @@
-14:44:48 **** Incremental Build of configuration Debug for project OS3 ****
+00:15:21 **** Incremental Build of configuration Debug for project OS3 ****
 Info: Internal Builder is used for build
 arm-atollic-eabi-gcc -c ..\..\app.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F42_43xxx -DUSE_STDPERIPH_DRIVER -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../ -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../BSP -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../BSP/ST/STM32F4xx/inc -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../BSP/ST/STM32F4xx/src -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../BSP/TrueSTUDIO -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../../../../Software/uC-CPU/ARM-Cortex-M4/GNU -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../../../../Software/uC-CPU -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../../../../Software/uC-LIB -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../../../../Software/uC-LIB/Ports/ARM-Cortex-M4/GNU -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../../../../Software/uCOS-III/Ports/ARM-Cortex-M4/Generic/GNU -IC:/Users/user/Downloads/NUCLEO-f429zi_example_code/Examples/ST/STM32F429II-SK/OS3/TrueSTUDIO/../../../../../Software/uCOS-III/Source -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o APP\app.o 
 ..\..\app.c: In function 'AppTask_USART':
-..\..\app.c:222:4: warning: implicit declaration of function 'send_string' [-Wimplicit-function-declaration]
-    send_string("\n\r led off \r\n");
-    ^~~~~~~~~~~
-..\..\app.c:211:9: warning: unused variable 'cpu_sr' [-Wunused-variable]
-  CPU_SR cpu_sr;
-         ^~~~~~
-..\..\app.c: In function 'AppTask_Button':
-..\..\app.c:279:9: warning: unused variable 'cpu_sr' [-Wunused-variable]
-  CPU_SR cpu_sr;
-         ^~~~~~
+..\..\app.c:214:2: warning: implicit declaration of function 'send_string' [-Wimplicit-function-declaration]
+  send_string("\r\nPush the button and stop led\n\r");
+  ^~~~~~~~~~~
 arm-atollic-eabi-gcc -o OS3.elf .metadata\.plugins\org.eclipse.cdt.make.core\specs.o APP\app.o APP\os_app_hooks.o BSP\ST\STM32F4xx\src\misc.o BSP\ST\STM32F4xx\src\stm32f4xx_adc.o BSP\ST\STM32F4xx\src\stm32f4xx_can.o BSP\ST\STM32F4xx\src\stm32f4xx_crc.o BSP\ST\STM32F4xx\src\stm32f4xx_cryp.o BSP\ST\STM32F4xx\src\stm32f4xx_cryp_aes.o BSP\ST\STM32F4xx\src\stm32f4xx_cryp_des.o BSP\ST\STM32F4xx\src\stm32f4xx_cryp_tdes.o BSP\ST\STM32F4xx\src\stm32f4xx_dac.o BSP\ST\STM32F4xx\src\stm32f4xx_dbgmcu.o BSP\ST\STM32F4xx\src\stm32f4xx_dcmi.o BSP\ST\STM32F4xx\src\stm32f4xx_dma.o BSP\ST\STM32F4xx\src\stm32f4xx_exti.o BSP\ST\STM32F4xx\src\stm32f4xx_flash.o BSP\ST\STM32F4xx\src\stm32f4xx_fsmc.o BSP\ST\STM32F4xx\src\stm32f4xx_gpio.o BSP\ST\STM32F4xx\src\stm32f4xx_hash.o BSP\ST\STM32F4xx\src\stm32f4xx_hash_md5.o BSP\ST\STM32F4xx\src\stm32f4xx_hash_sha1.o BSP\ST\STM32F4xx\src\stm32f4xx_i2c.o BSP\ST\STM32F4xx\src\stm32f4xx_iwdg.o BSP\ST\STM32F4xx\src\stm32f4xx_pwr.o BSP\ST\STM32F4xx\src\stm32f4xx_rcc.o BSP\ST\STM32F4xx\src\stm32f4xx_rng.o BSP\ST\STM32F4xx\src\stm32f4xx_rtc.o BSP\ST\STM32F4xx\src\stm32f4xx_sdio.o BSP\ST\STM32F4xx\src\stm32f4xx_spi.o BSP\ST\STM32F4xx\src\stm32f4xx_syscfg.o BSP\ST\STM32F4xx\src\stm32f4xx_tim.o BSP\ST\STM32F4xx\src\stm32f4xx_usart.o BSP\ST\STM32F4xx\src\stm32f4xx_wwdg.o BSP\TrueSTUDIO\cstartup.o BSP\bsp.o BSP\bsp_int.o BSP\bsp_periph.o uC-CPU\ARM-Cortex-M4\GNU\cpu_a.o uC-CPU\ARM-Cortex-M4\GNU\cpu_c.o uC-CPU\cpu_core.o uC-LIB\Ports\ARM-Cortex-M4\GNU\lib_mem_a.o uC-LIB\lib_ascii.o uC-LIB\lib_math.o uC-LIB\lib_mem.o uC-LIB\lib_str.o uCOS-III\Ports\ARM-Cortex-M4\Generic\GNU\os_cpu_a.o uCOS-III\Ports\ARM-Cortex-M4\Generic\GNU\os_cpu_c.o uCOS-III\Source\os_cfg_app.o uCOS-III\Source\os_core.o uCOS-III\Source\os_dbg.o uCOS-III\Source\os_flag.o uCOS-III\Source\os_int.o uCOS-III\Source\os_mem.o uCOS-III\Source\os_msg.o uCOS-III\Source\os_mutex.o uCOS-III\Source\os_pend_multi.o uCOS-III\Source\os_prio.o uCOS-III\Source\os_q.o uCOS-III\Source\os_sem.o uCOS-III\Source\os_stat.o uCOS-III\Source\os_task.o uCOS-III\Source\os_tick.o uCOS-III\Source\os_time.o uCOS-III\Source\os_tmr.o uCOS-III\Source\os_var.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../Debug_STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=OS3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
 C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list OS3.elf 
 Generate build reports...
 Print size information
    text	   data	    bss	    dec	    hex	filename
-  25644	    108	  12620	  38372	   95e4	OS3.elf
+  25920	    208	  12636	  38764	   976c	OS3.elf
 Print size information done
 Generate listing file
 Output sent to: OS3.list
 Generate listing file done
 Generate build reports done
 
-14:44:49 Build Finished (took 1s.331ms)
+00:15:22 Build Finished (took 1s.284ms)
 

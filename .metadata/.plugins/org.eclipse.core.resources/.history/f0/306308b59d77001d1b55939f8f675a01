@@ -50,6 +50,21 @@
 *                                            TYPES DEFINITIONS
 *********************************************************************************************************
 */
+typedef enum {
+   TASK_Button,
+   TASK_LED,
+   TASK_USART,
+
+   TASK_N
+}task_e;
+typedef struct
+{
+   CPU_CHAR* name;
+   OS_TASK_PTR func;
+   OS_PRIO prio;
+   CPU_STK* pStack;
+   OS_TCB* pTcb;
+}task_t;
 
 /*
 *********************************************************************************************************
@@ -60,8 +75,13 @@ static  void  AppTaskStart          (void     *p_arg);
 static  void  AppTaskCreate         (void);
 static  void  AppObjCreate          (void);
 
-static void AppTask_1000ms(void *p_arg);
+static void AppTask_Button(void *p_arg);
+static void AppTask_LED(void *p_arg);
+static void AppTask_USART(void *p_arg);
+
 static void Setup_Gpio(void);
+
+
 /*
 *********************************************************************************************************
 *                                       LOCAL GLOBAL VARIABLES
@@ -71,9 +91,20 @@ static void Setup_Gpio(void);
 static  OS_TCB   AppTaskStartTCB;
 static  CPU_STK  AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE];
 
-static  OS_TCB   Task_1000ms_TCB;
-static  CPU_STK  Task_1000ms_Stack[APP_CFG_TASK_START_STK_SIZE];
+static  OS_TCB       Task_Button_TCB;
+static  OS_TCB       Task_LED_TCB;
+static  OS_TCB       Task_USART_TCB;
 
+static  CPU_STK  Task_Button_Stack[APP_CFG_TASK_START_STK_SIZE];
+static  CPU_STK  Task_LED_Stack[APP_CFG_TASK_START_STK_SIZE];
+static  CPU_STK  Task_USART_Stack[APP_CFG_TASK_START_STK_SIZE];
+int count=0;
+task_t cyclic_tasks[TASK_N] = {
+   {"Task_Button" , AppTask_Button,  0, &Task_Button_Stack[0] , &Task_Button_TCB},
+   {"Task_LED", AppTask_LED, 1, &Task_LED_Stack[0], &Task_LED_TCB},
+   {"Task_USART", AppTask_USART, 2, &Task_USART_Stack[0], &Task_USART_TCB},
+};
+OS_Q Button_Q;
 /* ------------ FLOATING POINT TEST TASK -------------- */
 /*
 *********************************************************************************************************
@@ -107,6 +138,11 @@ int main(void)
 
     /* OS Init */
     OSInit(&err);                                               /* Init uC/OS-III.                                      */
+
+    OSQCreate((OS_Q       *)&Button_Q,
+    		  (CPU_CHAR   *)"Button Queue",
+			  (OS_MSG_QTY  )10,
+			  (OS_ERR     *)&err);
 
     OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,              /* Create the start task                                */
                  (CPU_CHAR     *)"App Task Start",
@@ -150,8 +186,6 @@ static  void  AppTaskStart (void *p_arg)
    (void)p_arg;
 
     BSP_Init();                                                 /* Initialize BSP functions                             */
-    CPU_Init();
-
     BSP_Tick_Init();                                            /* Initialize Tick Services.                            */
 
 #if OS_CFG_STAT_TASK_EN > 0u
@@ -173,6 +207,46 @@ static  void  AppTaskStart (void *p_arg)
 
 /*
 *********************************************************************************************************
+*                                          AppTask_500ms
+*
+* Description : Example of 500mS Task
+*
+* Arguments   : p_arg (unused)
+*
+* Returns     : none
+*
+* Note: Long period used to measure timing in person
+*********************************************************************************************************
+*/
+static void AppTask_Button(void *p_arg)
+{
+    OS_ERR  err;
+
+    BSP_LED_Off(1);
+    int button = 0;
+
+    while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
+
+    	button = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
+
+    	if(button)
+			OSQPost((OS_Q       *)&Button_Q,
+					(void       *)button,
+					(OS_MSG_SIZE )sizeof(void *),
+					(OS_OPT      )OS_OPT_POST_FIFO,
+					(OS_ERR     *)&err);
+
+
+        OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+                      OS_OPT_TIME_HMSM_STRICT,
+                      &err);
+       count++;
+
+    }
+}
+
+/*
+*********************************************************************************************************
 *                                          AppTask_1000ms
 *
 * Description : Example of 1000mS Task
@@ -184,33 +258,71 @@ static  void  AppTaskStart (void *p_arg)
 * Note: Long period used to measure timing in person
 *********************************************************************************************************
 */
-static void AppTask_1000ms(void *p_arg)
+static void AppTask_LED(void *p_arg)
 {
     OS_ERR  err;
-    BSP_LED_On(2);
-    int button = 0;
+    CPU_INT32U state=0u;
+    OS_MSG_SIZE size;
+    CPU_TS ts;
+
+    BSP_LED_Off(1);
 
     while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
-
-    	button = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
-
-    	if(button == 1){
-        	BSP_LED_Toggle(2);
-        	BSP_LED_Off(3);
-    	}
-
-    	if(button != 1){
-        	BSP_LED_Toggle(3);
-        	BSP_LED_Off(2);
-    	}
-
-    	OSTimeDlyHMSM(0u, 0u, 1u, 0u,
-                      OS_OPT_TIME_HMSM_STRICT,
-                      &err);
-
+       state = (CPU_INT32U)OSQPend((OS_Q       *)&Button_Q,
+    		                       (OS_TICK     )0,
+								   (OS_OPT      )OS_OPT_PEND_BLOCKING,
+								   (OS_MSG_SIZE*)&size,
+								   (CPU_TS     *)&ts,
+								   (OS_ERR     *)&err);
+       if(state)
+    	   OSQPost((OS_Q       *)&Button_Q,
+						(void       *)state,
+						(OS_MSG_SIZE )sizeof(void *),
+						(OS_OPT      )OS_OPT_POST_FIFO,
+						(OS_ERR     *)&err);
+       if(state == 1){
+    	   BSP_LED_On(1);
+    	   BSP_LED_Toggle(1);
+       }else{
+    	   BSP_LED_Off(1);
+       }
     }
 }
 
+/*
+*********************************************************************************************************
+*                                          AppTask_2000ms
+*
+* Description : Example of 2000mS Task
+*
+* Arguments   : p_arg (unused)
+*
+* Returns     : none
+*
+* Note: Long period used to measure timing in person
+*********************************************************************************************************
+*/
+static void AppTask_USART(void *p_arg)
+{
+	OS_ERR  err;
+	CPU_INT32U state=0u;
+	OS_MSG_SIZE size;
+	CPU_TS ts;
+
+    while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
+    	state = (CPU_INT32U)OSQPend((OS_Q       *)&Button_Q,
+								    (OS_TICK     )0,
+									(OS_OPT      )OS_OPT_PEND_BLOCKING,
+								    (OS_MSG_SIZE*)&size,
+								    (CPU_TS     *)&ts,
+								    (OS_ERR     *)&err);
+		if(state == 1){
+			send_string("LED ON\n");
+		}else{
+			send_string("LED OFF\n");
+		}
+    }
+}
 /*
 *********************************************************************************************************
 *                                          AppTaskCreate()
@@ -229,23 +341,30 @@ static void AppTask_1000ms(void *p_arg)
 
 static  void  AppTaskCreate (void)
 {
-	OS_ERR  err;
+   OS_ERR  err;
 
-	OSTaskCreate(
-		(OS_TCB       *)&Task_1000ms_TCB,              /*        LED task         */
-		(CPU_CHAR     *)"AppTask_1000ms",
-		(OS_TASK_PTR   )AppTask_1000ms,
-		(void         *)0u,
-		(OS_PRIO       )0u,
-		(CPU_STK      *)&Task_1000ms_Stack[0u],
-		(CPU_STK_SIZE  )Task_1000ms_Stack[APP_CFG_TASK_START_STK_SIZE / 10u],
-		(CPU_STK_SIZE  )APP_CFG_TASK_START_STK_SIZE,
-		(OS_MSG_QTY    )0u,
-		(OS_TICK       )0u,
-		(void         *)0u,
-		(OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
-		(OS_ERR       *)&err);
+   u8_t idx = 0;
+   task_t* pTask_Cfg;
+   for(idx = 0; idx < TASK_N; idx++)
+   {
+      pTask_Cfg = &cyclic_tasks[idx];
 
+      OSTaskCreate(
+            pTask_Cfg->pTcb,
+            pTask_Cfg->name,
+            pTask_Cfg->func,
+            (void         *)0u,
+            pTask_Cfg->prio,
+            pTask_Cfg->pStack,
+            pTask_Cfg->pStack[APP_CFG_TASK_START_STK_SIZE / 10u],
+            APP_CFG_TASK_START_STK_SIZE,
+            (OS_MSG_QTY    )0u,
+            (OS_TICK       )0u,
+            (void         *)0u,
+            (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+            (OS_ERR       *)&err
+      );
+   }
 }
 
 
@@ -270,26 +389,45 @@ static  void  AppObjCreate (void)
 
 }
 
+/*
+*********************************************************************************************************
+*                                          Setup_Gpio()
+*
+* Description : Configure LED GPIOs directly
+*
+* Argument(s) : none
+*
+* Return(s)   : none
+*
+* Caller(s)   : AppTaskStart()
+*
+* Note(s)     :
+*              LED1 PB0
+*              LED2 PB7
+*              LED3 PB14
+*
+*********************************************************************************************************
+*/
 static void Setup_Gpio(void) {
-	GPIO_InitTypeDef led_init = { 0 };
+   GPIO_InitTypeDef led_init = { 0 };
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
-	RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+   RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 
-	led_init.GPIO_Mode = GPIO_Mode_OUT;
-	led_init.GPIO_OType = GPIO_OType_PP;
-	led_init.GPIO_Speed = GPIO_Speed_2MHz;
-	led_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	led_init.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_7 | GPIO_Pin_14;
+   led_init.GPIO_Mode = GPIO_Mode_OUT;
+   led_init.GPIO_OType = GPIO_OType_PP;
+   led_init.GPIO_Speed = GPIO_Speed_2MHz;
+   led_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
+   led_init.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_7 | GPIO_Pin_14;
 
-	GPIO_Init(GPIOB, &led_init);
+   GPIO_Init(GPIOB, &led_init);
 
-	led_init.GPIO_Mode = GPIO_Mode_IN;
-	led_init.GPIO_PuPd = GPIO_PuPd_DOWN;
-	led_init.GPIO_Speed = GPIO_Speed_2MHz;
-	led_init.GPIO_Pin = GPIO_Pin_13;
+   led_init.GPIO_Mode = GPIO_Mode_IN;
+   led_init.GPIO_PuPd = GPIO_PuPd_DOWN;
+   led_init.GPIO_Speed = GPIO_Speed_2MHz;
+   led_init.GPIO_Pin = GPIO_Pin_13;
 
-	GPIO_Init(GPIOC, &led_init);
-
+   GPIO_Init(GPIOC, &led_init);
 }
+

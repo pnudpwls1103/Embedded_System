@@ -52,9 +52,8 @@
  */
 typedef enum {
 	TASK_USART,
-	LEDON,
-	LEDOFF,
-	LEDBLINK,
+	TASK_LED,
+	TASK_BUTTON,
 
 	TASK_N
 } task_e;
@@ -64,13 +63,10 @@ typedef struct {
 	OS_PRIO prio;
 	CPU_STK* pStack;
 	OS_TCB* pTcb;
+	OS_MSG_QTY qsize;
 } task_t;
 
-typedef enum {
-	OFF,
-	ON,
-	BLINK
-} led_state;
+int blinkState = 0;
 /*
  *********************************************************************************************************
  *                                         FUNCTION PROTOTYPES
@@ -81,9 +77,8 @@ static void AppTaskCreate(void);
 static void AppObjCreate(void);
 
 static void AppTask_USART(void *p_arg);
-static void AppTask_LED1(void *p_arg);
-static void AppTask_LED2(void *p_arg);
-static void AppTask_LED3(void *p_arg);
+static void AppTask_LED(void *p_arg);
+static void AppTask_Button(void *p_arg);
 
 static void Setup_Gpio(void);
 
@@ -97,26 +92,21 @@ static OS_TCB AppTaskStartTCB;
 static CPU_STK AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE];
 
 static OS_TCB Task_USART_TCB;
-static OS_TCB Task_LED1_TCB;
-static OS_TCB Task_LED2_TCB;
-static OS_TCB Task_LED3_TCB;
+static OS_TCB Task_LED_TCB;
+static OS_TCB Task_Button_TCB;
 
 static CPU_STK Task_USART_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_LED1_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_LED2_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_LED3_Stack[APP_CFG_TASK_START_STK_SIZE];
+static CPU_STK Task_LED_Stack[APP_CFG_TASK_START_STK_SIZE];
+static CPU_STK Task_Button_Stack[APP_CFG_TASK_START_STK_SIZE];
+
 
 task_t cyclic_tasks[TASK_N] = {
-		{ "Task_USART", AppTask_USART, 0, &Task_USART_Stack[0], &Task_USART_TCB },
-		{ "Task_LED1", AppTask_LED1, 0, &Task_LED1_Stack[0], &Task_LED1_TCB },
-		{ "Task_LED2", AppTask_LED2, 0, &Task_LED2_Stack[0], &Task_LED2_TCB },
-		{ "Task_LED3", AppTask_LED3, 0, &Task_LED3_Stack[0], &Task_LED3_TCB }
+		{ "Task_USART", AppTask_USART, 2, &Task_USART_Stack[0], &Task_USART_TCB, 1 },
+		{ "Task_LED", AppTask_LED, 1, &Task_LED_Stack[0], &Task_LED_TCB, 1 },
+		{ "Task_BUTTON", AppTask_Button, 0, &Task_Button_Stack[0], &Task_Button_TCB, 0},
 	};
 
-char c;
-char command[100];
-led_state  led_states[3];
-int  led_blink[3];
+int answer = 0;
 /* ------------ FLOATING POINT TEST TASK -------------- */
 /*
  *********************************************************************************************************
@@ -149,19 +139,20 @@ int main(void) {
 	/* OS Init */
 	OSInit(&err); /* Init uC/OS-III.                                      */
 
-    OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,              /* Create the start task                                */
-                 (CPU_CHAR     *)"App Task Start",
-                 (OS_TASK_PTR   )AppTaskStart,
-                 (void         *)0u,
-                 (OS_PRIO       )APP_CFG_TASK_START_PRIO,
-                 (CPU_STK      *)&AppTaskStartStk[0u],
-                 (CPU_STK_SIZE  )AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE / 10u],
-                 (CPU_STK_SIZE  )APP_CFG_TASK_START_STK_SIZE,
-                 (OS_MSG_QTY    )0u,
-                 (OS_TICK       )0u,
-                 (void         *)0u,
-                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
-                 (OS_ERR       *)&err);
+	OSTaskCreate(
+			(OS_TCB *) &AppTaskStartTCB, /* Create the start task                                */
+			(CPU_CHAR *) "App Task Start",
+			(OS_TASK_PTR) AppTaskStart, (void *) 0u,
+			(OS_PRIO) APP_CFG_TASK_START_PRIO,
+			(CPU_STK *) &AppTaskStartStk[0u],
+			(CPU_STK_SIZE) AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE / 10u],
+			(CPU_STK_SIZE) APP_CFG_TASK_START_STK_SIZE,
+			(OS_MSG_QTY) 0u,
+			(OS_TICK) 0u,
+			(void *) 0u,
+			(OS_OPT) (OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR ),
+			(OS_ERR *) &err
+	);
 
 	OSStart(&err); /* Start multitasking (i.e. give control to uC/OS-III). */
 
@@ -200,7 +191,7 @@ static void AppTaskStart(void *p_arg) {
 	CPU_IntDisMeasMaxCurReset();
 #endif
 
-	// BSP_LED_Off(0u);                                            /* Turn Off LEDs after initialization                   */
+	BSP_LED_Off(0u);                                            /* Turn Off LEDs after initialization                   */
 
 	APP_TRACE_DBG(("Creating Application Kernel Objects\n\r"));
 	AppObjCreate(); /* Create Applicaiton kernel objects                    */
@@ -211,161 +202,118 @@ static void AppTaskStart(void *p_arg) {
 
 /*
  *********************************************************************************************************
- *                                          AppTask_USART
+ *                                          AppTask
  *********************************************************************************************************
  */
 static void AppTask_USART(void *p_arg) {
 	OS_ERR err;
+	OS_MSG_SIZE msg_size;
+	CPU_TS ts;
 	CPU_SR cpu_sr;
-	volatile int index = 0;
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		while (USART_ReceiveData(Nucleo_COM1) != '`') {
-			while (USART_GetFlagStatus(Nucleo_COM1, USART_FLAG_RXNE) == RESET) {
-				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-							  OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-			}
 
-			c = USART_ReceiveData(Nucleo_COM1);
-			USART_SendData(Nucleo_COM1, c);
-			OS_CRITICAL_ENTER();
-			command[index] = c;
-			OS_CRITICAL_EXIT();
-			index++;
-			OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-						  OS_OPT_TIME_HMSM_STRICT,
-						  &err);
+	send_string("\r\nPush the button and stop led\n\r");
+	CPU_CRITICAL_ENTER();
+	answer = rand() % 3 + 1;
+	CPU_CRITICAL_EXIT();
+	send_string("ANSWER: ");
+	USART_SendData(Nucleo_COM1, (uint16_t) (answer + '0'));
+	send_string("\n\r");
+
+	int check = 0;
+	while (DEF_TRUE) { /* Task body, always written as an infinite loop.*/
+		check = (int)OSTaskQPend(0,
+								OS_OPT_PEND_BLOCKING,
+								&msg_size,
+								&ts,
+								&err);
+
+		if(check) {
+			send_string("\r\n========= CORRECT =========\n\r");
+		}
+		else {
+			send_string("\r\n========= WRONG =========\n\r");
 		}
 
-		command[index - 1] = '\0';
-
-		if(!(strncmp(command, "led", 3))) {
-			int led_num = atoi(command + 3) - 1;
-			if(!(strncmp((command + 4), "on", 2))) {
-				OS_CRITICAL_ENTER();
-				led_states[led_num] = ON;
-				OS_CRITICAL_EXIT();
-			} else if (!(strncmp((command + 4), "off", 3))) {
-				OS_CRITICAL_ENTER();
-				led_states[led_num] = OFF;
-				OS_CRITICAL_EXIT();
-			} else if (!(strncmp((command + 4), "blink", 5))) {
-				int blink_time = atoi(command + 9);
-				OS_CRITICAL_ENTER();
-				led_states[led_num] = BLINK;
-				led_blink[led_num] = blink_time;
-				OS_CRITICAL_EXIT();
-			}
-
-		} else if(!(strncmp(command, "reset", 5))) {
-			for(int i = 0; i < 3; i++) {
-				led_states[i] = OFF;
-				led_blink[i] = 0;
-			}
-		}
-
-		send_string("\n\rCommand : ");
-		send_string(command);
+		CPU_CRITICAL_ENTER();
+		answer = rand() % 3 + 1;
+		send_string("ANSWER: ");
+		USART_SendData(Nucleo_COM1, (uint16_t) (answer + '0'));
 		send_string("\n\r");
-
-		index = 0;
-
-		OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-					  OS_OPT_TIME_HMSM_STRICT,
-					  &err);
+		CPU_CRITICAL_EXIT();
 	}
 }
 
-/*
- *********************************************************************************************************
- *                                          AppTask_LED1
- *********************************************************************************************************
- */
-static void AppTask_LED1(void *p_arg) {
+static void AppTask_LED(void *p_arg) {
 	OS_ERR err;
+	OS_MSG_SIZE msg_size;
+	CPU_TS ts;
+
+	int prevflag = 0;
+	int flag = 0;
+	int check = 0;
+	uint32_t buttonNum = 0;
+	uint32_t ledNum = 0;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		switch (led_states[0]) {
-			case ON:
-				BSP_LED_On(1);
-				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-							  OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-			case OFF:
-				BSP_LED_Off(1);
-				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-						      OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-			case BLINK:
-				BSP_LED_Toggle(1);
-				OSTimeDlyHMSM(0u, 0u, led_blink[0], 0u,
-							  OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
+		buttonNum += (int)OSTaskQPend(0,
+									OS_OPT_PEND_BLOCKING,
+									&msg_size,
+									&ts,
+									&err);
+		ledNum %= 3;
+		buttonNum %= 2;
+
+		prevflag = flag;
+		flag = (buttonNum) ? 1 : 0;
+
+		if (prevflag != flag && flag == 1) {
+			send_string("LED: ");
+			USART_SendData(Nucleo_COM1, (uint16_t) (ledNum+1 + '0'));
+
+			BSP_LED_On(i);
+			OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+						OS_OPT_TIME_HMSM_STRICT, &err);
+			check = (answer == ledNum+1) ? 1 : 0;
+			if(check) {
+				for(int i = 1; i <= 3; i++) {
+					BSP_LED_On(i);
+				}
+			}
+			else {
+				for(int i = 1; i <= 3; i++) {
+					BSP_LED_Off(i);
+				}
+			}
+
+			OSTaskQPost(&Task_USART_TCB,
+						(void*)check,
+						sizeof(check),
+						OS_OPT_POST_FIFO,
+						&err);
+		}
+		else if (flag == 0) {
+			for(int i = 1; i <= 3; i++) {
+				if(i == ledNum+1) BSP_LED_On(i);
+				else BSP_LED_Off(i);
+			}
+			ledNum++;
 		}
 	}
 }
 
-/*
- *********************************************************************************************************
- *                                          AppTask_LED2
- *********************************************************************************************************
- */
-static void AppTask_LED2(void *p_arg) {
+static void AppTask_Button(void *p_arg) {
 	OS_ERR err;
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		switch (led_states[1]) {
-			case ON:
-				BSP_LED_On(2);
-				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-							  OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-			case OFF:
-				BSP_LED_Off(2);
-				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-						      OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-			case BLINK:
-				BSP_LED_Toggle(2);
-				OSTimeDlyHMSM(0u, 0u, led_blink[1], 0u,
-							  OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-		}
-	}
-}
 
-/*
- *********************************************************************************************************
- *                                          AppTask_LED3
- *********************************************************************************************************
- */
-static void AppTask_LED3(void *p_arg) {
-	OS_ERR err;
+	int	button;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		switch (led_states[2]) {
-			case ON:
-				BSP_LED_On(3);
-				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-							  OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-			case OFF:
-				BSP_LED_Off(3);
-				OSTimeDlyHMSM(0u, 0u, 0u, 1u,
-						      OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-			case BLINK:
-				BSP_LED_Toggle(3);
-				OSTimeDlyHMSM(0u, 0u, led_blink[2], 0u,
-							  OS_OPT_TIME_HMSM_STRICT,
-							  &err);
-				break;
-		}
+		button = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
+		OSTaskQPost(&Task_LED_TCB,
+					(void*)button,
+					sizeof(button),
+					OS_OPT_POST_FIFO,
+					&err);
+
+		OSTimeDlyHMSM(0u, 0u, 0u, 100u,
+				OS_OPT_TIME_HMSM_STRICT, &err);
 	}
 }
 
@@ -393,10 +341,17 @@ static void AppTaskCreate(void) {
 	for (idx = 0; idx < TASK_N; idx++) {
 		pTask_Cfg = &cyclic_tasks[idx];
 
-		OSTaskCreate(pTask_Cfg->pTcb, pTask_Cfg->name, pTask_Cfg->func,
-				(void *) 0u, pTask_Cfg->prio, pTask_Cfg->pStack,
+		OSTaskCreate(
+				pTask_Cfg->pTcb,
+				pTask_Cfg->name,
+				pTask_Cfg->func,
+				(void *) 0u,
+				pTask_Cfg->prio,
+				pTask_Cfg->pStack,
 				pTask_Cfg->pStack[APP_CFG_TASK_START_STK_SIZE / 10u],
-				APP_CFG_TASK_START_STK_SIZE, (OS_MSG_QTY) 0u, (OS_TICK) 0u,
+				APP_CFG_TASK_START_STK_SIZE,
+				(OS_MSG_QTY) pTask_Cfg->qsize,
+				(OS_TICK) 0u,
 				(void *) 0u,
 				(OS_OPT) (OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR ),
 				(OS_ERR *) &err);
@@ -446,6 +401,7 @@ static void Setup_Gpio(void) {
 	GPIO_InitTypeDef led_init = { 0 };
 
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 	RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 
 	led_init.GPIO_Mode = GPIO_Mode_OUT;
@@ -455,5 +411,11 @@ static void Setup_Gpio(void) {
 	led_init.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_7 | GPIO_Pin_14;
 
 	GPIO_Init(GPIOB, &led_init);
-}
 
+	led_init.GPIO_Mode = GPIO_Mode_IN;
+	led_init.GPIO_PuPd = GPIO_PuPd_DOWN;
+	led_init.GPIO_Speed = GPIO_Speed_2MHz;
+	led_init.GPIO_Pin = GPIO_Pin_13;
+
+	GPIO_Init(GPIOC, &led_init);
+}

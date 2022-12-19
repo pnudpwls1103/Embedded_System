@@ -106,6 +106,7 @@ task_t cyclic_tasks[TASK_N] = {
 		{ "Task_BUTTON", AppTask_Button, 0, &Task_Button_Stack[0], &Task_Button_TCB, 0},
 	};
 
+int answer = 0;
 /* ------------ FLOATING POINT TEST TASK -------------- */
 /*
  *********************************************************************************************************
@@ -210,23 +211,35 @@ static void AppTask_USART(void *p_arg) {
 	CPU_TS ts;
 	CPU_SR cpu_sr;
 
-	int buttonNum = 0;
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.*/
-		buttonNum = (int)OSTaskQPend(0,
-									OS_OPT_PEND_BLOCKING,
-									&msg_size,
-									&ts,
-									&err);
+	send_string("\r\nPush the button and stop led\n\r");
+	CPU_CRITICAL_ENTER();
+	answer = rand() % 3 + 1;
+	CPU_CRITICAL_EXIT();
+	send_string("ANSWER: ");
+	USART_SendData(Nucleo_COM1, (uint16_t) (answer + '0'));
+	send_string("\n\r");
 
-		if(buttonNum == 0) {
-			send_string("\n\r led off \r\n");
-		}
-		else if(buttonNum == 1) {
-			send_string("\n\r led on \r\n");
+	int check = 0;
+	while (DEF_TRUE) { /* Task body, always written as an infinite loop.*/
+		check = (int)OSTaskQPend(0,
+								OS_OPT_PEND_BLOCKING,
+								&msg_size,
+								&ts,
+								&err);
+
+		if(check) {
+			send_string("\r\n========= CORRECT =========\n\r");
 		}
 		else {
-			send_string("\n\r led toggle \r\n");
+			send_string("\r\n========= WRONG =========\n\r");
 		}
+
+		CPU_CRITICAL_ENTER();
+		answer = rand() % 3 + 1;
+		send_string("ANSWER: ");
+		USART_SendData(Nucleo_COM1, (uint16_t) (answer + '0'));
+		send_string("\n\r");
+		CPU_CRITICAL_EXIT();
 	}
 }
 
@@ -234,73 +247,76 @@ static void AppTask_LED(void *p_arg) {
 	OS_ERR err;
 	OS_MSG_SIZE msg_size;
 	CPU_TS ts;
-	CPU_SR cpu_sr;
 
+	int prevflag = 0;
+	int flag = 0;
+	int check = 0;
 	uint32_t buttonNum = 0;
+	uint32_t ledNum = 0;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
 		buttonNum += (int)OSTaskQPend(0,
 									OS_OPT_PEND_BLOCKING,
 									&msg_size,
 									&ts,
 									&err);
-		buttonNum %= 3;
-		OSTaskQPost(&Task_USART_TCB,
-					(void*)buttonNum,
-					sizeof(buttonNum),
-					OS_OPT_POST_FIFO,
-					&err);
-		if(buttonNum == 0) {
-			CPU_CRITICAL_ENTER();
-			blinkState = 0;
-			CPU_CRITICAL_EXIT();
+		ledNum %= 3;
+		buttonNum %= 2;
 
-			for(int i = 1; i <= 3; i++)
+		prevflag = flag;
+		flag = (buttonNum) ? 1 : 0;
+
+		if (prevflag != flag && flag == 1) {
+			send_string("LED: ");
+			USART_SendData(Nucleo_COM1, (uint16_t) (ledNum+1 + '0'));
+
+			for(int i = 1; i <= 3; i++) {
 				BSP_LED_Off(i);
+			}
+			BSP_LED_On(ledNum+1);
+			OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+						OS_OPT_TIME_HMSM_STRICT, &err);
+			check = (answer == ledNum+1) ? 1 : 0;
+			if(check) {
+				for(int i = 1; i <= 3; i++) {
+					BSP_LED_On(i);
+				}
+			}
+			else {
+				for(int i = 1; i <= 3; i++) {
+					BSP_LED_Off(i);
+				}
+			}
+
+			OSTaskQPost(&Task_USART_TCB,
+						(void*)check,
+						sizeof(check),
+						OS_OPT_POST_FIFO,
+						&err);
 		}
-		else if(buttonNum == 1) {
-			CPU_CRITICAL_ENTER();
-			blinkState = 0;
-			CPU_CRITICAL_EXIT();
-			for(int i = 1; i <= 3; i++)
-				BSP_LED_On(i);
-		}
-		else {
-			CPU_CRITICAL_ENTER();
-			blinkState = 1;
-			CPU_CRITICAL_EXIT();
-			for(int i = 1; i <= 3; i++)
-				BSP_LED_Toggle(i);
+		else if (flag == 0) {
+			for(int i = 1; i <= 3; i++) {
+				if(i == ledNum+1) BSP_LED_On(i);
+				else BSP_LED_Off(i);
+			}
+			ledNum++;
 		}
 	}
 }
 
 static void AppTask_Button(void *p_arg) {
 	OS_ERR err;
-	CPU_SR cpu_sr;
 
 	int	button;
 	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
 		button = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
-		if(button) {
-			OSTaskQPost(&Task_LED_TCB,
-						(void*)button,
-						sizeof(button),
-						OS_OPT_POST_FIFO,
-						&err);
-		}
+		OSTaskQPost(&Task_LED_TCB,
+					(void*)button,
+					sizeof(button),
+					OS_OPT_POST_FIFO,
+					&err);
 
-		OSTimeDlyHMSM(0u, 0u, 0u, 500u,
+		OSTimeDlyHMSM(0u, 0u, 0u, 100u,
 				OS_OPT_TIME_HMSM_STRICT, &err);
-
-		if(blinkState) {
-			OSTaskQPost(&Task_LED_TCB,
-						(void*) 0,
-						sizeof(0),
-						OS_OPT_POST_FIFO,
-						&err);
-		}
-
-
 	}
 }
 
@@ -406,4 +422,3 @@ static void Setup_Gpio(void) {
 
 	GPIO_Init(GPIOC, &led_init);
 }
-
