@@ -46,11 +46,14 @@
 *********************************************************************************************************
 */
 
-#define BSP_GPIOB_LED1	DEF_BIT_00
-#define BSP_GPIOB_LED2	DEF_BIT_07
-#define BSP_GPIOB_LED3	DEF_BIT_14
+#define BSP_GPIOB_LED1		DEF_BIT_00
+#define BSP_GPIOB_LED2		DEF_BIT_07
+#define BSP_GPIOB_LED3		DEF_BIT_14
 
-#define BSP_USART1
+#define BSP_GPIOC_PUSH		DEF_BIT_13
+#define BSP_GPIOG_BUTTON0	DEF_BIT_2
+#define BSP_GPIOG_BUTTON1	DEF_BIT_3
+#define BSP_GPIOG_BUTTONE	DEF_BIT_1
 
 /*
 *********************************************************************************************************
@@ -223,7 +226,11 @@
 */
 
 static  void  BSP_LED_Init  (void);
-static void USART_Config(void);
+static	void  USART_Config(void);
+static  void  BSP_PUSH_BUTTON_Init(void);
+static  void  BSP_PUSH_BUTTON0_Init(void);
+static  void  BSP_PUSH_BUTTON1_Init(void);
+static  void  BSP_PUSH_BUTTONE_Init(void);
 
 
 /*
@@ -353,6 +360,10 @@ void  BSP_Init (void)
 
     BSP_LED_Init();                                             /* Initialize user LEDs                                 */
     USART_Config();
+    BSP_PUSH_BUTTON_Init();										/* Initialize user Push button							*/
+    BSP_PUSH_BUTTON0_Init();
+    BSP_PUSH_BUTTON1_Init();
+    BSP_PUSH_BUTTONE_Init();
 
 #ifdef TRACE_EN                                                 /* See project / compiler preprocessor options.         */
     BSP_CPU_REG_DBGMCU_CR |=  BSP_DBGMCU_CR_TRACE_IOEN_MASK;    /* Enable tracing (see Note #2).                        */
@@ -425,38 +436,99 @@ void  BSP_Tick_Init (void)
 
 /*
 *********************************************************************************************************
-*                                           BSP_LED_Init()
+*                                          Setup_Gpio()
 *
-* Description : Initialize any or all the LEDs on the board.
+* Description : Configure LED GPIOs directly
 *
-* Argument(s) : led     The ID of the LED to control:
+* Argument(s) : none
 *
+* Return(s)   : none
+*
+* Caller(s)   : AppTaskStart()
+*
+* Note(s)     :
 *              LED1 PB0
 *              LED2 PB7
 *              LED3 PB14
 *
-* Return(s)   : none.
-*
-* Caller(s)   : Application.
-*
-* Note(s)     : The LED pins are active-low on the STM32F429II-SK board
 *********************************************************************************************************
 */
 
 static void  BSP_LED_Init()
 {
-	   GPIO_InitTypeDef led_init = {0};
+   GPIO_InitTypeDef led_init = {0};
 
-	   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-	   RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+   RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 
-	   led_init.GPIO_Mode   = GPIO_Mode_OUT;
-	   led_init.GPIO_OType  = GPIO_OType_PP;
-	   led_init.GPIO_Speed  = GPIO_Speed_2MHz;
-	   led_init.GPIO_PuPd   = GPIO_PuPd_NOPULL;
-	   led_init.GPIO_Pin    = GPIO_Pin_0 | GPIO_Pin_7 | GPIO_Pin_14;
+   led_init.GPIO_Mode   = GPIO_Mode_OUT;
+   led_init.GPIO_OType  = GPIO_OType_PP;
+   led_init.GPIO_Speed  = GPIO_Speed_2MHz;
+   led_init.GPIO_PuPd   = GPIO_PuPd_NOPULL;
+   led_init.GPIO_Pin    = GPIO_Pin_0 | GPIO_Pin_7 | GPIO_Pin_14;
 
-	   GPIO_Init(GPIOB, &led_init);
+   GPIO_Init(GPIOB, &led_init);
+
+}
+
+static void  BSP_PUSH_BUTTON_Init()
+{
+   GPIO_InitTypeDef button_init = {0};
+
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+   RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
+   button_init.GPIO_Mode   = GPIO_Mode_IN;
+   button_init.GPIO_PuPd   = GPIO_PuPd_DOWN;
+   button_init.GPIO_Pin    = GPIO_Pin_13;
+
+   GPIO_Init(GPIOC, &button_init);
+
+}
+
+static void  BSP_PUSH_BUTTON0_Init()
+{
+   GPIO_InitTypeDef button0_init = {0};
+
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
+   RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
+   button0_init.GPIO_Mode   = GPIO_Mode_IN;
+   button0_init.GPIO_PuPd   = GPIO_PuPd_DOWN;
+   button0_init.GPIO_Pin    = GPIO_Pin_2;
+
+   GPIO_Init(GPIOG, &button0_init);
+
+}
+
+static void  BSP_PUSH_BUTTON1_Init()
+{
+   GPIO_InitTypeDef button1_init = {0};
+
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
+   RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
+   button1_init.GPIO_Mode   = GPIO_Mode_IN;
+   button1_init.GPIO_PuPd   = GPIO_PuPd_DOWN;
+   button1_init.GPIO_Pin    = GPIO_Pin_3;
+
+   GPIO_Init(GPIOG, &button1_init);
+
+}
+
+static void  BSP_PUSH_BUTTONE_Init()
+{
+   GPIO_InitTypeDef buttonE_init = {0};
+
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
+   RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
+   buttonE_init.GPIO_Mode   = GPIO_Mode_IN;
+   buttonE_init.GPIO_PuPd   = GPIO_PuPd_DOWN;
+   buttonE_init.GPIO_Pin    = GPIO_Pin_1;
+
+   GPIO_Init(GPIOG, &buttonE_init);
+
 }
 
 
@@ -499,7 +571,6 @@ void  BSP_LED_Off (CPU_INT08U  led)
 
         case 2u:
         	GPIO_ResetBits(GPIOB, BSP_GPIOB_LED2);
-        	//GPIO_WriteBit(GPIOB, GPIO_Pin_7, Bit_RESET);
              break;
 
 
@@ -641,7 +712,6 @@ void  BSP_LED_Toggle (CPU_INT08U  led)
              break;
     }
 }
-
 
 /*$PAGE*/
 /*
@@ -982,4 +1052,3 @@ void send_string(const char *str)
         USART_SendData(Nucleo_COM1, *str++);
     }
 }
-

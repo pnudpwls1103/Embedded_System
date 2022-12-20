@@ -51,9 +51,7 @@
  *********************************************************************************************************
  */
 typedef enum {
-	TASK_USART,
-	TASK_LED,
-	TASK_BUTTON,
+	TASK_OUTPUT, TASK_PWM, TASK_USART, TASK_ButtonInput,
 
 	TASK_N
 } task_e;
@@ -66,7 +64,6 @@ typedef struct {
 	OS_MSG_QTY qsize;
 } task_t;
 
-int blinkState = 0;
 /*
  *********************************************************************************************************
  *                                         FUNCTION PROTOTYPES
@@ -76,11 +73,13 @@ static void AppTaskStart(void *p_arg);
 static void AppTaskCreate(void);
 static void AppObjCreate(void);
 
+static void AppTask_OUTPUT(void *p_arg);
 static void AppTask_USART(void *p_arg);
-static void AppTask_LED(void *p_arg);
-static void AppTask_Button(void *p_arg);
+static void AppTask_ButtonInput(void *p_arg);
 
 static void Setup_Gpio(void);
+static void TimConfiguration(void);
+static void ControlPWM(int PWM);
 
 /*
  *********************************************************************************************************
@@ -91,22 +90,24 @@ static void Setup_Gpio(void);
 static OS_TCB AppTaskStartTCB;
 static CPU_STK AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE];
 
+static OS_TCB Task_OUTPUT_TCB;
 static OS_TCB Task_USART_TCB;
-static OS_TCB Task_LED_TCB;
-static OS_TCB Task_Button_TCB;
+static OS_TCB Task_ButtonInput_TCB;
 
+static CPU_STK Task_OUTPUT_Stack[APP_CFG_TASK_START_STK_SIZE];
 static CPU_STK Task_USART_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_LED_Stack[APP_CFG_TASK_START_STK_SIZE];
-static CPU_STK Task_Button_Stack[APP_CFG_TASK_START_STK_SIZE];
+static CPU_STK Task_ButtonInput_Stack[APP_CFG_TASK_START_STK_SIZE];
 
+task_t cyclic_tasks[TASK_N] = { { "Task_OUTPUT", AppTask_OUTPUT, 1,
+		&Task_OUTPUT_Stack[0], &Task_OUTPUT_TCB, 1 }, { "Task_USART",
+		AppTask_USART, 2, &Task_USART_Stack[0], &Task_USART_TCB, 1 }, {
+		"Task_ButtonInput", AppTask_ButtonInput, 0, &Task_ButtonInput_Stack[0],
+		&Task_ButtonInput_TCB, 0 }, };
 
-task_t cyclic_tasks[TASK_N] = {
-		{ "Task_USART", AppTask_USART, 2, &Task_USART_Stack[0], &Task_USART_TCB, 1 },
-		{ "Task_LED", AppTask_LED, 1, &Task_LED_Stack[0], &Task_LED_TCB, 1 },
-		{ "Task_BUTTON", AppTask_Button, 0, &Task_Button_Stack[0], &Task_Button_TCB, 0},
-	};
+OS_SEM MySem;
 
-int answer = 0;
+int password[4] = { 0, 1, 0, 1 };
+
 /* ------------ FLOATING POINT TEST TASK -------------- */
 /*
  *********************************************************************************************************
@@ -128,6 +129,7 @@ int main(void) {
 	RCC_DeInit();
 //    SystemCoreClockUpdate();
 	Setup_Gpio();
+	TimConfiguration();
 
 	/* BSP Init */
 	BSP_IntDisAll(); /* Disable all interrupts.                              */
@@ -138,21 +140,18 @@ int main(void) {
 
 	/* OS Init */
 	OSInit(&err); /* Init uC/OS-III.                                      */
+	GPIO_SetBits(GPIOE, GPIO_Pin_9);
 
-	OSTaskCreate(
-			(OS_TCB *) &AppTaskStartTCB, /* Create the start task                                */
-			(CPU_CHAR *) "App Task Start",
-			(OS_TASK_PTR) AppTaskStart, (void *) 0u,
-			(OS_PRIO) APP_CFG_TASK_START_PRIO,
-			(CPU_STK *) &AppTaskStartStk[0u],
+	OSSemCreate(&MySem, "My Semaphore", 1, &err);
+
+	OSTaskCreate((OS_TCB *) &AppTaskStartTCB, /* Create the start task                                */
+	(CPU_CHAR *) "App Task Start", (OS_TASK_PTR) AppTaskStart, (void *) 0u,
+			(OS_PRIO) APP_CFG_TASK_START_PRIO, (CPU_STK *) &AppTaskStartStk[0u],
 			(CPU_STK_SIZE) AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE / 10u],
-			(CPU_STK_SIZE) APP_CFG_TASK_START_STK_SIZE,
-			(OS_MSG_QTY) 0u,
-			(OS_TICK) 0u,
-			(void *) 0u,
+			(CPU_STK_SIZE) APP_CFG_TASK_START_STK_SIZE, (OS_MSG_QTY) 0u,
+			(OS_TICK) 0u, (void *) 0u,
 			(OS_OPT) (OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR ),
-			(OS_ERR *) &err
-	);
+			(OS_ERR *) &err);
 
 	OSStart(&err); /* Start multitasking (i.e. give control to uC/OS-III). */
 
@@ -191,7 +190,7 @@ static void AppTaskStart(void *p_arg) {
 	CPU_IntDisMeasMaxCurReset();
 #endif
 
-	BSP_LED_Off(0u);                                            /* Turn Off LEDs after initialization                   */
+	BSP_LED_Off(0u); /* Turn Off LEDs after initialization                   */
 
 	APP_TRACE_DBG(("Creating Application Kernel Objects\n\r"));
 	AppObjCreate(); /* Create Applicaiton kernel objects                    */
@@ -205,118 +204,145 @@ static void AppTaskStart(void *p_arg) {
  *                                          AppTask
  *********************************************************************************************************
  */
+
+static void AppTask_OUTPUT(void *p_arg) {
+	OS_ERR err;
+	OS_MSG_SIZE msg_size;
+	CPU_TS ts;
+
+	uint32_t flag = 0;
+
+	ControlPWM(2000);
+	GPIO_SetBits(GPIOE, GPIO_Pin_9);
+	GPIO_SetBits(GPIOE, GPIO_Pin_13);
+	GPIO_ResetBits(GPIOE, GPIO_Pin_11);
+
+	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
+		flag = (int) OSTaskQPend(0,
+		OS_OPT_PEND_BLOCKING, &msg_size, &ts, &err);
+
+		// wrong
+		if (flag == 1) {
+			ControlPWM(2000);
+			GPIO_SetBits(GPIOE, GPIO_Pin_13);
+			GPIO_ResetBits(GPIOE, GPIO_Pin_11);
+		}
+		// wrong for 3 times
+		else if (flag == 2) {
+			GPIO_ResetBits(GPIOE, GPIO_Pin_9);
+
+			ControlPWM(2000);
+			GPIO_SetBits(GPIOE, GPIO_Pin_13);
+			GPIO_ResetBits(GPIOE, GPIO_Pin_11);
+		} else {
+			ControlPWM(1000);
+			GPIO_SetBits(GPIOE, GPIO_Pin_9);
+			GPIO_SetBits(GPIOE, GPIO_Pin_11);
+			GPIO_ResetBits(GPIOE, GPIO_Pin_13);
+		}
+	}
+}
+
+static void AppTask_ButtonInput(void *p_arg) {
+	OS_ERR err;
+	CPU_TS ts;
+	int pwdflag = 0;
+	int prevpwd = 2;
+
+	int input = 2;
+	while (DEF_TRUE) {
+		switch (err) {
+		case OS_ERR_NONE:
+			prevpwd = pwdflag;
+			pwdflag = GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_2)
+					|| GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_3);
+
+			OSSemPend(&MySem, 0,
+			OS_OPT_PEND_BLOCKING, &ts, &err);
+
+			if (prevpwd != pwdflag && pwdflag) {
+				if (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_2)) {
+					input = 0;
+				} else if (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_3)) {
+					input = 1;
+				}
+
+				OSTaskQPost(&Task_USART_TCB, (void*) input, sizeof(input),
+				OS_OPT_POST_FIFO, &err);
+			}
+
+			OSSemPost(&MySem,
+			OS_OPT_POST_1, &err);
+
+			break;
+		case OS_ERR_PEND_ABORT:
+			break;
+		case OS_ERR_OBJ_DEL:
+			break;
+		default:
+			break;
+		}
+
+		OSTimeDlyHMSM(0u, 0u, 0u, 100u,
+		OS_OPT_TIME_HMSM_STRICT, &err);
+	}
+}
+
 static void AppTask_USART(void *p_arg) {
 	OS_ERR err;
 	OS_MSG_SIZE msg_size;
 	CPU_TS ts;
-	CPU_SR cpu_sr;
 
-	send_string("\r\nPush the button and stop led\n\r");
-	CPU_CRITICAL_ENTER();
-	answer = rand() % 3 + 1;
-	CPU_CRITICAL_EXIT();
-	send_string("ANSWER: ");
-	USART_SendData(Nucleo_COM1, (uint16_t) (answer + '0'));
-	send_string("\n\r");
+	int i = 0;
+	int wrong_cnt = 0;
+	int wrong_flag = 0;
 
-	int check = 0;
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.*/
-		check = (int)OSTaskQPend(0,
-								OS_OPT_PEND_BLOCKING,
-								&msg_size,
-								&ts,
-								&err);
+	USART_SendData(Nucleo_COM1, 42);
+	send_string("\n\rEnter your password \n\r* \n\r \n\r");
 
-		if(check) {
-			send_string("\r\n========= CORRECT =========\n\r");
-		}
-		else {
-			send_string("\r\n========= WRONG =========\n\r");
-		}
+	uint32_t input;
+	while (DEF_TRUE) {
+		input = (int) OSTaskQPend(0,
+		OS_OPT_PEND_BLOCKING, &msg_size, &ts, &err);
 
-		CPU_CRITICAL_ENTER();
-		answer = rand() % 3 + 1;
-		send_string("ANSWER: ");
-		USART_SendData(Nucleo_COM1, (uint16_t) (answer + '0'));
-		send_string("\n\r");
-		CPU_CRITICAL_EXIT();
-	}
-}
-
-static void AppTask_LED(void *p_arg) {
-	OS_ERR err;
-	OS_MSG_SIZE msg_size;
-	CPU_TS ts;
-
-	int prevflag = 0;
-	int flag = 0;
-	int check = 0;
-	uint32_t buttonNum = 0;
-	uint32_t ledNum = 0;
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		buttonNum += (int)OSTaskQPend(0,
-									OS_OPT_PEND_BLOCKING,
-									&msg_size,
-									&ts,
-									&err);
-		ledNum %= 3;
-		buttonNum %= 2;
-
-		prevflag = flag;
-		flag = (buttonNum) ? 1 : 0;
-
-		if (prevflag != flag && flag == 1) {
-			send_string("LED: ");
-			USART_SendData(Nucleo_COM1, (uint16_t) (ledNum+1 + '0'));
-
-			for(int i = 1; i <= 3; i++) {
-				BSP_LED_Off(i);
+		switch (err) {
+		case OS_ERR_NONE:
+			USART_SendData(Nucleo_COM1, 42);
+			if (input != password[i]) {
+				wrong_flag = 1;
 			}
-			BSP_LED_On(ledNum+1);
-			OSTimeDlyHMSM(0u, 0u, 0u, 500u,
-						OS_OPT_TIME_HMSM_STRICT, &err);
-			check = (answer == ledNum+1) ? 1 : 0;
-			if(check) {
-				for(int i = 1; i <= 3; i++) {
-					BSP_LED_On(i);
+			i++;
+
+			if (i == 4) {
+				if (wrong_flag != 1) {
+					send_string("\n\rcorrect \n\r \n\r \n\r");
+					OSTaskQPost(&Task_OUTPUT_TCB, (void*) wrong_flag,
+							sizeof(wrong_flag),
+							OS_OPT_POST_FIFO, &err);
 				}
-			}
-			else {
-				for(int i = 1; i <= 3; i++) {
-					BSP_LED_Off(i);
+
+				else {
+					wrong_cnt += 1;
+					send_string("\n\rwrong \n\r \n\r \n\r");
 				}
+
+				if (wrong_cnt == 3) {
+					OSTaskQPost(&Task_OUTPUT_TCB, (void*) 2, sizeof(2),
+					OS_OPT_POST_FIFO, &err);
+				}
+
+				i = 0;
+				wrong_flag = 0;
 			}
 
-			OSTaskQPost(&Task_USART_TCB,
-						(void*)check,
-						sizeof(check),
-						OS_OPT_POST_FIFO,
-						&err);
+			break;
+		case OS_ERR_PEND_ABORT:
+			break;
+		case OS_ERR_OBJ_DEL:
+			break;
+		default:
+			break;
 		}
-		else if (flag == 0) {
-			for(int i = 1; i <= 3; i++) {
-				if(i == ledNum+1) BSP_LED_On(i);
-				else BSP_LED_Off(i);
-			}
-			ledNum++;
-		}
-	}
-}
-
-static void AppTask_Button(void *p_arg) {
-	OS_ERR err;
-
-	int	button;
-	while (DEF_TRUE) { /* Task body, always written as an infinite loop.       */
-		button = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
-		OSTaskQPost(&Task_LED_TCB,
-					(void*)button,
-					sizeof(button),
-					OS_OPT_POST_FIFO,
-					&err);
-
-		OSTimeDlyHMSM(0u, 0u, 0u, 100u,
-				OS_OPT_TIME_HMSM_STRICT, &err);
 	}
 }
 
@@ -344,18 +370,11 @@ static void AppTaskCreate(void) {
 	for (idx = 0; idx < TASK_N; idx++) {
 		pTask_Cfg = &cyclic_tasks[idx];
 
-		OSTaskCreate(
-				pTask_Cfg->pTcb,
-				pTask_Cfg->name,
-				pTask_Cfg->func,
-				(void *) 0u,
-				pTask_Cfg->prio,
-				pTask_Cfg->pStack,
+		OSTaskCreate(pTask_Cfg->pTcb, pTask_Cfg->name, pTask_Cfg->func,
+				(void *) 0u, pTask_Cfg->prio, pTask_Cfg->pStack,
 				pTask_Cfg->pStack[APP_CFG_TASK_START_STK_SIZE / 10u],
-				APP_CFG_TASK_START_STK_SIZE,
-				(OS_MSG_QTY) pTask_Cfg->qsize,
-				(OS_TICK) 0u,
-				(void *) 0u,
+				APP_CFG_TASK_START_STK_SIZE, (OS_MSG_QTY) pTask_Cfg->qsize,
+				(OS_TICK) 0u, (void *) 0u,
 				(OS_OPT) (OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR ),
 				(OS_ERR *) &err);
 	}
@@ -401,24 +420,91 @@ static void AppObjCreate(void) {
  *********************************************************************************************************
  */
 static void Setup_Gpio(void) {
-	GPIO_InitTypeDef led_init = { 0 };
+	GPIO_InitTypeDef gpio_init;
 
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 	RCC_AHB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 
-	led_init.GPIO_Mode = GPIO_Mode_OUT;
-	led_init.GPIO_OType = GPIO_OType_PP;
-	led_init.GPIO_Speed = GPIO_Speed_2MHz;
-	led_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	led_init.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_7 | GPIO_Pin_14;
+	gpio_init.GPIO_Mode = GPIO_Mode_OUT;
+	gpio_init.GPIO_OType = GPIO_OType_PP;
+	gpio_init.GPIO_Speed = GPIO_Speed_2MHz;
+	gpio_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	gpio_init.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_7 | GPIO_Pin_14;
 
-	GPIO_Init(GPIOB, &led_init);
+	GPIO_Init(GPIOB, &gpio_init);
 
-	led_init.GPIO_Mode = GPIO_Mode_IN;
-	led_init.GPIO_PuPd = GPIO_PuPd_DOWN;
-	led_init.GPIO_Speed = GPIO_Speed_2MHz;
-	led_init.GPIO_Pin = GPIO_Pin_13;
+	gpio_init.GPIO_Mode = GPIO_Mode_AF;
+	gpio_init.GPIO_OType = GPIO_OType_PP;
+	gpio_init.GPIO_Speed = GPIO_Speed_100MHz;
+	gpio_init.GPIO_PuPd = GPIO_PuPd_UP;
+	gpio_init.GPIO_Pin = GPIO_Pin_8;
 
-	GPIO_Init(GPIOC, &led_init);
+	GPIO_PinAFConfig(GPIOC, GPIO_PinSource8, GPIO_AF_TIM3);
+	GPIO_Init(GPIOC, &gpio_init);
+
+	gpio_init.GPIO_Mode = GPIO_Mode_OUT;
+	gpio_init.GPIO_OType = GPIO_OType_PP;
+	gpio_init.GPIO_Speed = GPIO_Speed_2MHz;
+	gpio_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	gpio_init.GPIO_Pin = GPIO_Pin_2;
+
+	GPIO_Init(GPIOD, &gpio_init);
+
+	gpio_init.GPIO_Mode = GPIO_Mode_OUT;
+	gpio_init.GPIO_OType = GPIO_OType_PP;
+	gpio_init.GPIO_Speed = GPIO_Speed_2MHz;
+	gpio_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	gpio_init.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_11 | GPIO_Pin_13;
+
+	GPIO_Init(GPIOE, &gpio_init);
+
+	gpio_init.GPIO_Mode = GPIO_Mode_IN;
+	gpio_init.GPIO_PuPd = GPIO_PuPd_DOWN;
+	gpio_init.GPIO_Speed = GPIO_Speed_2MHz;
+	gpio_init.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
+
+	GPIO_Init(GPIOG, &gpio_init);
+}
+
+static void TimConfiguration(void) {
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+	TIM_OCInitTypeDef TIM_OCInitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
+
+	TIM_TimeBaseStructure.TIM_Period = 20000;
+	TIM_TimeBaseStructure.TIM_Prescaler = 72;
+	TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Down;
+
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+	TIM_OCInitStructure.TIM_Pulse = 1500;
+	TIM_OC3Init(TIM3, &TIM_OCInitStructure);
+
+	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
+	TIM_OC3PreloadConfig(TIM3, TIM_OCPreload_Disable);
+	TIM_ARRPreloadConfig(TIM3, ENABLE);
+	TIM_Cmd(TIM3, ENABLE);
+
+	NVIC_EnableIRQ(TIM3_IRQn);
+	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x1;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x1;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+}
+
+static void ControlPWM(int PWM) {
+	TIM_OCInitTypeDef TIM_OCInitStructure;
+
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+	TIM_OCInitStructure.TIM_Pulse = PWM;
+	TIM_OC3Init(TIM3, &TIM_OCInitStructure);
 }
